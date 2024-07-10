@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#top {
+    background-color: rgb(55, 55, 55);
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+    box-sizing: border-box;
+    /* text-decoration: aliceblue; */
+}
+
+#main-container {
+    display: flex;
+    flex: 1;
+}
+
+#left {
+    background-color: rgb(39, 39, 39);
+    width: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+    padding-top: 10px;
+}
+
+#center {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#center::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+#center::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+
+#centertop {
+    background-color: rgb(39, 39, 39);
+    flex: 1 1 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#centerbottom {
+    background-color: rgb(39, 39, 39);
+    flex: 1 1 91%;
+    /* text-decoration: aliceblue; */
+
+}
+
+#right {
+    background-color: rgb(29, 27, 27);
+    width: 725px;
+    height: 100%;
+}
+
+#top button {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#top button:hover {
+    background-color: lightgray;
+}
+
+#top button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+#left button {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+
+#centertop button {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#left button:hover,
+#centertop button:hover {
+    background-color: lightgray;
+}
+
+#left button img,
+#centertop button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    left: 50%;
+    margin-left: 18px;
+    /*-60*/
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-text1 {
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -34px;
+    left: 50%;
+    margin-left: -35px;
+    /*-60*/
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+button:hover .tooltip-text,
+button:hover .tooltip-text1 {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.folder {
+    color: white;
+    /* padding-left: 30px; */
+    /* cursor: pointer; */
+}
+
+/* .folder selected
+{
+
+} */
+
+.tab {
+    /* color: white; */
+    color: rgba(255, 255, 255, 0.56);
+    /* padding: 5px; */
+    /* cursor: pointer; */
+    margin: 10px;
+    font-size: 14px;
+}
+
+.tab.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+
+
+}
+
+.folder,
+.note {
+    /* text-align: center; */
+    /* text-decoration: rgba(255, 255, 255, 0.15); */
+    color: rgba(255, 255, 255, 0.56);
+    padding: 5px;
+    /* padding-left: 20px; */
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.folder {
+    /* color: white; */
+    padding-left: 30px;
+    /* cursor: pointer; */
+}
+
+.note.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.note-title {
+    font-size: 30px;
+    color: rgb(255, 255, 255, 0.8);
+    margin: 35px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.note-content {
+    margin: 10px;
+    padding-bottom: 280px;
+    color: rgb(255, 255, 255, 0.8);
+
+}
+
+.no-file {
+    color: rgb(255, 255, 255, 0.8);
+    margin-top: 200px;
+    margin-left: 281px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.tab {
+    color: rgba(255, 255, 255, 0.56);
+    margin: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.tab.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+}
